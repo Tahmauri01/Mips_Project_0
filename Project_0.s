@@ -20,4 +20,7 @@ for_loop:
 	la $a0, 10				#ascii for '\n' newline
 	li $v0, 11				#print
 	syscall					#prints the new line
+
+	addi $t1, $t1, 1		#adds 1 to m every loop
+	j for_loop				#starts the loop again
 	
