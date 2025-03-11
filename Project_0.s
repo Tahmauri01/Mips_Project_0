@@ -5,22 +5,14 @@
 .globl main
 
 main:
-	la $t0, id		#loads the address of the id
-	addi $t1, $t0, 9	#sets $t1 to 9 plus $t0 so loop can reach $t1
-	j loop			#jumps to loop
+	li $t0, 4		#loads the 4th element in $t0  (x in python)
+	la $t1, id		#loads the id in $t1	(id in python)
+	li $t4, 9		#loads 9 in $t4   (9 in python)
 
-exit:
-	li $v0, 10		#ends the program
-	syscall
-	
+	j loop			#jumps to the loop  (for loop in python)
+
 
 loop:
-	lb $a0, ($t0)		#loads a byte from the address
-	li $v0, 11		#prints the byte
-	syscall
-	addi $t0, $t0, 1	#adds 1 to $t0
+	addi $t0, $t0, 1
+	bne $t0, $t4, loop
 	
-	beq $t0, $t1, exit	#checks if $t0 equals to nine and exits the program
-	
-	j loop			#jumps to loop
-
