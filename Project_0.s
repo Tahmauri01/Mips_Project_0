@@ -16,3 +16,8 @@ for_loop:
 
 	la $a0, id				#Loads the id
 	move $a1, $t2			#stores the starting index
+
+	la $a0, 10				#ascii for '\n' newline
+	li $v0, 11				#print
+	syscall					#prints the new line
+	
