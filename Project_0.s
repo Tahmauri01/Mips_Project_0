@@ -16,6 +16,7 @@ for_loop:
 
 	la $a0, id				#Loads the id
 	move $a1, $t2			#stores the starting index
+	jal print_substring		#calls print_substring function
 
 	la $a0, 10				#ascii for '\n' newline
 	li $v0, 11				#print
@@ -23,4 +24,4 @@ for_loop:
 
 	addi $t1, $t1, 1		#adds 1 to m every loop
 	j for_loop				#starts the loop again
-	
+
