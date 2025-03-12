@@ -9,7 +9,7 @@ main:
 	li $t1, 1		#This is m
 
 for_loop:
-	bge $t1, 10, exit		#If m > 9 exits loop
+	bge $t1, 10, back_start		#If m > 9 exits loop
 
 	add $t2, $t1, $t0 		#Adds m and N
 	rem $t2, $t2, 9			#Does (m + N) % 9
@@ -24,6 +24,15 @@ for_loop:
 
 	addi $t1, $t1, 1		#adds 1 to m every loop
 	j for_loop				#starts the loop again
+
+back_start:
+	li $t1, 1				#resets the counter for the backwards loop
+
+back_loop:
+	bge $t1, 10, exit		#if m is greater than or equal to 10 the loop stops
+
+	li $t6, 20				#stores 20
+	
 
 print_substring:
 	add $t3, $a0, $a1			#Adds base address and index to get the value of the index you want
@@ -52,3 +61,4 @@ done:
 exit:
 	li $v0, 10					#exit command
 	syscall
+
