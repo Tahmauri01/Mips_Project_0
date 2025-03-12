@@ -75,3 +75,11 @@ exit:
 	li $v0, 10					#exit command
 	syscall
 
+print_substring_reverse:
+	add $t3, $a0, $a1			#gets the address of the integer you want
+	li $t4, 9					#counter for number of characters to print
+
+reversed_loop:
+	lb $a0, 0($t3)				#loads the byte of the current address
+	li $v0, 11					#print command
+	syscall
