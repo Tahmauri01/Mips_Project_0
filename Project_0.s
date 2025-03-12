@@ -83,3 +83,10 @@ reversed_loop:
 	lb $a0, 0($t3)				#loads the byte of the current address
 	li $v0, 11					#print command
 	syscall
+
+	addi $t3, $t3, -1			#subtracts 1 to base character to go to the previous address
+	addi $t4, $t4, -1			#subtracts 1 from the counter to end the loop
+	beqz $t4, done_reverse		#checks if counter is 0
+
+	la $t5, id					#loads the id
+	bge $t3, $t5, reversed_loop		#restarts the loop
