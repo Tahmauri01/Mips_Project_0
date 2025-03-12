@@ -48,3 +48,7 @@ reset:
 
 done:
 	jr $ra						#returns to caller
+
+exit:
+	li $v0, 10					#exit command
+	syscall
