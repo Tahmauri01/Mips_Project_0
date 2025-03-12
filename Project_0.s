@@ -90,3 +90,9 @@ reversed_loop:
 
 	la $t5, id					#loads the id
 	bge $t3, $t5, reversed_loop		#restarts the loop
+	
+	add $t3, $t5, 8				#goes to the last character
+	j reversed_loop				#Restarts the loop
+
+done reverse:
+	jr $ra						#returns to caller
