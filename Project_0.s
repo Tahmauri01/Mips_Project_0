@@ -25,3 +25,9 @@ for_loop:
 	addi $t1, $t1, 1		#adds 1 to m every loop
 	j for_loop				#starts the loop again
 
+print_substring:
+	add $t3, $a0, $a1			#Adds base address and index to get the value of the index you want
+	li $t4, 9					#Counter for the loop
+
+print_loop:
+	lb $a0, 0($t3)				#loading the character at this current address
