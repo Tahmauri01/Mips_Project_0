@@ -38,6 +38,7 @@ back_loop:
 
 	la $a0, id				#Load the id
 	move $a1, $t2			#stores the starting index
+	jal print_substring_reverse		#calls the function to print
 
 	la $a0, 10				#print the id
 	li $v0, 11				
