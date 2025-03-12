@@ -94,5 +94,5 @@ reversed_loop:
 	add $t3, $t5, 8				#goes to the last character
 	j reversed_loop				#Restarts the loop
 
-done reversed:
+done_reversed:
 	jr $ra						#returns to caller
