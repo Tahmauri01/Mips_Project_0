@@ -38,7 +38,14 @@ back_loop:
 
 	la $a0, id				#Load the id
 	move $a1, $t2			#stores the starting index
-	
+
+	la $a0, 10				#print the id
+	li $v0, 11				
+	syscall
+
+	addi $t1, $t1, 1		#adds 1 to m every loop
+	j back_loop				#repeats the loop
+
 
 print_substring:
 	add $t3, $a0, $a1			#Adds base address and index to get the value of the index you want
