@@ -38,12 +38,12 @@ print_loop:
 	addi $t4, $t4, -1			#subtracts one from counter to end the loop
 	beqz $t4, done				#checks if the counter is 0
 
-	lb $t5, 0($t5)				#loads the next character and checks for null
+	lb $t5, 0($t3)				#loads the next character and checks for null
 	beqz $t5, reset				#restarts from zero if it equals null
 	j print_loop				#jumps to print_loop function
 
 reset:
-	la $t5, id					#Resets to the start of the string 
+	la $t3, id					#Resets to the start of the string 
 	j print_loop				#Continue printing
 
 done:
