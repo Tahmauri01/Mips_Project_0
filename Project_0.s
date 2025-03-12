@@ -86,7 +86,7 @@ reversed_loop:
 
 	addi $t3, $t3, -1			#subtracts 1 to base character to go to the previous address
 	addi $t4, $t4, -1			#subtracts 1 from the counter to end the loop
-	beqz $t4, done_reverse		#checks if counter is 0
+	beqz $t4, done_reversed		#checks if counter is 0
 
 	la $t5, id					#loads the id
 	bge $t3, $t5, reversed_loop		#restarts the loop
@@ -94,5 +94,5 @@ reversed_loop:
 	add $t3, $t5, 8				#goes to the last character
 	j reversed_loop				#Restarts the loop
 
-done reverse:
+done reversed:
 	jr $ra						#returns to caller
