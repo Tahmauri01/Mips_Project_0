@@ -32,6 +32,12 @@ back_loop:
 	bge $t1, 10, exit		#if m is greater than or equal to 10 the loop stops
 
 	li $t6, 20				#stores 20
+	add $t2, $t6, $t0		#(N + 20)
+	sub $t2, $t2, $t1		#(N + 20 - m)
+	rem $t2, $t2, 9			#(N + 20 - m) % 9
+
+	la $a0, id				#Load the id
+	move $a1, $t2			#stores the starting index
 	
 
 print_substring:
