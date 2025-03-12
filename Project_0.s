@@ -29,7 +29,7 @@ back_start:
 	li $t1, 1				#resets the counter for the backwards loop
 
 back_loop:
-	bge $t1, 10, exit		#if m is greater than or equal to 10 the loop stops
+	bge $t1, 10, back_start		#if m is greater than or equal to 10 the loop stops
 
 	li $t6, 20				#stores 20
 	add $t2, $t6, $t0		#(N + 20)
