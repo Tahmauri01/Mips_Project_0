@@ -37,3 +37,6 @@ print_loop:
 	addi $t3, $t3, 1			#adds 1 to the base address to get next address
 	addi $t4, $t4, -1			#subtracts one from counter to end the loop
 	beqz $t4, done				#checks if the counter is 0
+
+done:
+	jr $ra						#returns to caller
